@@ -1,0 +1,40 @@
+{
+	"variables": [],
+	"info": {
+		"name": "rest-api",
+		"_postman_id": "4390c92c-67f8-0415-583b-209a6e599181",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "invert hello",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"hello inverted to olleh\"] = jsonData.result === \"olleh\";"
+					}
+				}
+			],
+			"request": {
+				"url": "http://0.0.0.0:8080/invert",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "string",
+							"value": "hello",
+							"type": "text",
+							"enabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
