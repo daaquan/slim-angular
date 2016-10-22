@@ -38,12 +38,11 @@ class Home
      * @param Response $response
      * @return Response
      */
-    public function invert(Request $request, Response $response)
+    public function hello(Request $request, Response $response)
     {
         $string = $request->getParam('string');
-        $result = implode('', array_reverse(str_split($string)));
 
-        return $response->withJson(['result' => $result], 200);
+        return $response->withJson(['result' => "Hello {$string}"], 200);
     }
 
 }

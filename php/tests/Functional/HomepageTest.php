@@ -17,12 +17,12 @@ class HomepageTest extends BaseTestCase
 
     public function testInvert()
     {
-        $response = $this->runApp('POST', '/invert', ['string' => 'hello']);
+        $response = $this->runApp('POST', '/hello', ['string' => 'John']);
         $body = json_decode($response->getBody(), JSON_OBJECT_AS_ARRAY);
 
         $this->assertInternalType('array', $body, 'the JSON String MUST be a valid array');
         $this->assertArrayHasKey('result', $body, 'the array MUST contain a result offset');
-        $this->assertEquals('olleh', $body['result'], 'the result offset MUST be equal to olleh');
+        $this->assertEquals('Hello John', $body['result'], 'the result offset MUST be equal to Hello John');
     }
 
 }

@@ -9,4 +9,4 @@ $app->get('/[{name}]', function ($request, $response, $args) {
     return $this->renderer->render($response, 'index.phtml', $args);
 });
 
-$app->post('/invert', '\App\Controller\Home:invert');
+$app->post('/hello', '\App\Controller\Home:hello');
