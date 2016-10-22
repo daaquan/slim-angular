@@ -4,5 +4,10 @@
             <directory>php/tests</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist>
+            <directory>php/app</directory>
+        </whitelist>
+    </filter>
 </phpunit>
 
