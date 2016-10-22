@@ -4,13 +4,13 @@
 $container = $app->getContainer();
 
 // view renderer
-$container['renderer'] = function ($c) {
+$container['renderer'] = function (\Slim\Container $c) {
     $settings = $c->get('settings')['renderer'];
     return new Slim\Views\PhpRenderer($settings['template_path']);
 };
 
 // monolog
-$container['logger'] = function ($c) {
+$container['logger'] = function (\Slim\Container $c) {
     $settings = $c->get('settings')['logger'];
     $logger = new Monolog\Logger($settings['name']);
     $logger->pushProcessor(new Monolog\Processor\UidProcessor());
