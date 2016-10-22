@@ -1,3 +1,1 @@
-var app = angular.module('myApp', []);
-
-console.log('i am here');
+var app = angular.module('myApp', ['ngRoute']);

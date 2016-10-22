@@ -9,7 +9,11 @@ module.exports = function(grunt) {
             },
             min: {
                 files: {
-                    'public/app.min.js': ['node_modules/angular/angular.js', 'js/*.js']
+                    'public/app.min.js': [
+                        'node_modules/angular/angular.js',
+                        'node_modules/angular-route/angular-route.js',
+                        'js/*.js'
+                    ]
                 }
             }
         },

@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/newman/bin/newman.js run rest-api.postman_collection.json"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
     "bootstrap": "^3.3.7"
   },
   "devDependencies": {
