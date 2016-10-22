@@ -15,4 +15,14 @@ class HomepageTest extends BaseTestCase
         $this->assertContains('The Web Stack', (string)$response->getBody());
     }
 
+    public function testInvert()
+    {
+        $response = $this->runApp('POST', '/invert', ['string' => 'hello']);
+        $body = json_decode($response->getBody(), JSON_OBJECT_AS_ARRAY);
+
+        $this->assertInternalType('array', $body, 'the JSON String MUST be a valid array');
+        $this->assertArrayHasKey('result', $body, 'the array MUST contain a result offset');
+        $this->assertEquals('olleh', $body['result'], 'the result offset MUST be equal to olleh');
+    }
+
 }
