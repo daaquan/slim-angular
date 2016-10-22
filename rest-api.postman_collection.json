@@ -3,22 +3,23 @@
 	"info": {
 		"name": "rest-api",
 		"_postman_id": "4390c92c-67f8-0415-583b-209a6e599181",
+		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "invert hello",
+			"name": "say hello",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"type": "text/javascript",
-						"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"hello inverted to olleh\"] = jsonData.result === \"olleh\";"
+						"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar jsonData = JSON.parse(responseBody);\ntests[\"say : 'Hello John'\"] = jsonData.result === \"Hello John\";"
 					}
 				}
 			],
 			"request": {
-				"url": "http://0.0.0.0:8080/invert",
+				"url": "http://0.0.0.0:8080/hello",
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -26,7 +27,7 @@
 					"formdata": [
 						{
 							"key": "string",
-							"value": "hello",
+							"value": "John",
 							"type": "text",
 							"enabled": true
 						}
