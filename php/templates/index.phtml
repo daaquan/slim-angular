@@ -7,14 +7,14 @@
     <title>the web stack</title>
     <link rel="stylesheet" href="style.min.css">
 </head>
-<body ng-app>
+<body ng-app="myApp">
 <div class="container">
     <div class="jumbotron">
         <h1>The Web Stack</h1>
         <p>A Stack based on Slim Framework and Angular.js to build efficient web applications</p>
-        <div>
-            {{ 2 + 1 }}
-        </div>
+    </div>
+    <div class="row">
+        <div ng-view></div>
     </div>
 </div>
 <script src="app.min.js"></script>

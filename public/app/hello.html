@@ -1,0 +1,20 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Test me : say hello
+    </div>
+    <div class="panel-body">
+        <form ng-hide="vm.result">
+            <div class="form-group">
+                <label for="inputString">Your name</label>
+                <input type="text" class="form-control" id="inputString" ng-model="vm.string" required>
+            </div>
+            <button type="submit" class="btn btn-default" ng-click="vm.hello(vm.string)">Submit</button>
+        </form>
+        <div class="alert alert-success" ng-show="vm.result">
+            {{vm.result}}
+        </div>
+        <div class="alert alert-warning" ng-show="vm.error">
+            {{vm.error}}
+        </div>
+    </div>
+</div>
