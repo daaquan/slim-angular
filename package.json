@@ -16,6 +16,7 @@
   "keywords": [
     "angular.js",
     "slim-framework",
+    "gulp",
     "rest"
   ],
   "author": "Alexandre Debril",
@@ -29,11 +30,12 @@
     "bootstrap": "^3.3.7"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-cssmin": "^1.0.2",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
     "newman": "^3.2.0"
   }
 }
