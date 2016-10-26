@@ -32,6 +32,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
   return gulp.src([
       'node_modules/angular/angular.js',
+      'node_modules/angular-cookies/angular-cookies.js',
       'node_modules/angular-route/angular-route.js',
       'js/*.js'
   ])
