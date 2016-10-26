@@ -10,17 +10,17 @@ app.config(["$routeProvider", function ($routeProvider) {
 
 // hello controller
 app.controller("HelloController", HelloController);
-HelloController.$inject = ['$http'];
+HelloController.$inject = ['$http', 'tokenizer'];
 
-function HelloController($http) {
+function HelloController($http, tokenizer) {
     var vm = this;
 
     vm.hello = function (string) {
         vm.error = '';
         $http.post('/hello',
-            {
+            tokenizer.tokenize({
                 'string': string
-            }
+            })
         )
         .then(function (response) {
             vm.result = response.data.result;
