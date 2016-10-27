@@ -1,9 +1,9 @@
 # The web stack
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/1f46b876-c656-430a-a510-57aa52b86837/big.png)](https://insight.sensiolabs.com/projects/1f46b876-c656-430a-a510-57aa52b86837)
-[![Build Status](https://travis-ci.org/alexdebril/the-web-stack.svg?branch=master)](https://travis-ci.org/alexdebril/the-web-stack)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alexdebril/the-web-stack/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/the-web-stack/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/alexdebril/the-web-stack/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/the-web-stack/?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/482685e6-d5b5-4801-809e-4591743a1b96/small.png)](https://insight.sensiolabs.com/projects/482685e6-d5b5-4801-809e-4591743a1b96)
+[![Build Status](https://travis-ci.org/alexdebril/nuragio.svg?branch=master)](https://travis-ci.org/alexdebril/nuragio)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alexdebril/nuragio/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/nuragio/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/alexdebril/nuragio/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/nuragio/?branch=master)
 
 Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application with Angular.js. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
 
