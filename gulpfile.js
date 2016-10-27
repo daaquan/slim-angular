@@ -46,12 +46,15 @@ gulp.task('scripts', function() {
 });
 
 // Default task
-gulp.task('default', ['watch'], function() {
+gulp.task('default', ['build']);
+
+// build
+gulp.task('build', function() {
     gulp.run('less', 'styles', 'scripts');
 });
 
 // Watch
-gulp.task('watch', function() {
+gulp.task('watch', ['build'], function() {
     // Watch .css files
     gulp.watch('css/*.less', function(event) {
       console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
