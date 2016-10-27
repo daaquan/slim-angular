@@ -1,4 +1,4 @@
-# The web stack
+# Nuragio
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/482685e6-d5b5-4801-809e-4591743a1b96/small.png)](https://insight.sensiolabs.com/projects/482685e6-d5b5-4801-809e-4591743a1b96)
 [![Build Status](https://travis-ci.org/alexdebril/nuragio.svg?branch=master)](https://travis-ci.org/alexdebril/nuragio)
@@ -11,7 +11,7 @@ Use this skeleton application to quickly setup and start working on a new Slim F
 
 Run this command from the directory in which you want to install your new application.
 
-    php composer.phar create-project debril/the-web-stack [my-app-name]
+    php composer.phar create-project debril/nuragio [my-app-name]
 
 Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
 
