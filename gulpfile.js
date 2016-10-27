@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('less', function() {
-    return gulp.src('css/*.scss')
+    return gulp.src('css/*.less')
         .pipe(less())
         .pipe(gulp.dest('dist/styles'));
 });
@@ -32,6 +32,8 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
   return gulp.src([
       'node_modules/angular/angular.js',
+      'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
+      'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
       'node_modules/angular-cookies/angular-cookies.js',
       'node_modules/angular-route/angular-route.js',
       'js/*.js'
@@ -51,7 +53,7 @@ gulp.task('default', ['watch'], function() {
 // Watch
 gulp.task('watch', function() {
     // Watch .css files
-    gulp.watch('css/*.scss', function(event) {
+    gulp.watch('css/*.less', function(event) {
       console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
       gulp.run('less');
     });
