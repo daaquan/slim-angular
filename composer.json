@@ -1,8 +1,8 @@
 {
-    "name": "debril/the-web-stack",
-    "description": "A raw web stack based on Angular and Slim Framework",
-    "keywords": ["microframework", "rest", "router", "psr7", "angular"],
-    "homepage": "https://github.com/alexdebril/the-web-stack",
+    "name": "debril/nuragio",
+    "description": "A raw web stack based on Angular, Bootstrap and Slim Framework",
+    "keywords": ["slim", "stack", "rest", "router", "psr7", "angular", "gulp", "less", "bootstrap"],
+    "homepage": "https://github.com/alexdebril/nuragio",
     "license": "MIT",
     "authors": [
         {
@@ -33,8 +33,13 @@
     },
 	"scripts": {
         "start": "php -S 0.0.0.0:8080 -t public public/index.php",
+        "gulp": "./node_modules/gulp/bin/gulp.js watch",
         "test": "phpunit",
-        "newman": "./node_modules/newman/bin/newman.js run rest-api.postman_collection.json"
+        "newman": "./node_modules/newman/bin/newman.js run rest-api.postman_collection.json",
+        "post-create-project-cmd": [
+            "npm install",
+            "./node_modules/gulp/bin/gulp.js"
+        ]
 	}
 
 }
