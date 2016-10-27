@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Csrf;
+namespace App\Middleware\Csrf;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\ResponseInterface;
