@@ -1,6 +1,6 @@
 {
-  "name": "the-web-stack",
-  "version": "0.0.1",
+  "name": "Nuragio",
+  "version": "1.0.0",
   "description": "A raw web stack based on Angular and Slim Framework",
   "main": "public/index.php",
   "directories": {
