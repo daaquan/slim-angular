@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<project name="Nuragio" default="build" basedir=".">
+
+    <property name="package.dir" value="dist/package" />
+    <property name="dest.dir" value="" />
+
+    <target name="clean">
+        <delete dir="${package.dir}" />
+    </target>
+
+    <target name="build.dir">
+        <mkdir dir="${package.dir}/${dest.dir}" />
+        <copy todir="${package.dir}/${dest.dir}">
+            <fileset dir="${dest.dir}">
+                <include name="**/*" />
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="build.php">
+        <phingcall target="build.dir">
+            <property name="dest.dir" value="php" />
+        </phingcall>
+    </target>
+
+    <target name="build.public">
+        <phingcall target="build.dir">
+            <property name="dest.dir" value="public" />
+        </phingcall>
+    </target>
+
+    <target name="copy.composer">
+        <copy todir="${package.dir}">
+            <fileset dir=".">
+                <include name="composer.*" />
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="composer.install">
+        <exec command="composer install --no-dev --optimize-autoloader" dir="${package.dir}" passthru="true"/>
+    </target>
+
+    <target name="rm.composer">
+        <delete>
+            <fileset dir="${package.dir}">
+                <include name="composer.*" />
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="create.archive">
+        <tstamp>
+            <format property="package.date" pattern="%Y-%m-%d-%H-%M" />
+        </tstamp>
+        <tar destfile="${phing.project.name}-${package.date}.tar.gz" basedir="${package.dir}" compression="gzip">
+            <fileset dir="${package.dir}">
+                <include name="**/**" />
+            </fileset>
+        </tar>
+    </target>
+
+    <target name="build">
+        <phingcall target="clean" />
+        <phingcall target="build.php" />
+        <phingcall target="build.public" />
+        <phingcall target="copy.composer" />
+        <phingcall target="composer.install" />
+        <phingcall target="rm.composer" />
+        <phingcall target="create.archive" />
+    </target>
+
+</project>
