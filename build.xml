@@ -50,10 +50,7 @@
     </target>
 
     <target name="create.archive">
-        <tstamp>
-            <format property="package.date" pattern="%Y-%m-%d-%H-%M" />
-        </tstamp>
-        <tar destfile="${phing.project.name}-${package.date}.tar.gz" basedir="${package.dir}" compression="gzip">
+        <tar destfile="${phing.project.name}.tar.gz" basedir="${package.dir}" compression="gzip">
             <fileset dir="${package.dir}">
                 <include name="**/**" />
             </fileset>
