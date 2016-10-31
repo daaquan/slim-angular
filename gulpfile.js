@@ -25,7 +25,7 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('dist/build'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('public/minified'));
 });
 
 // Scripts
@@ -42,7 +42,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('dist/scripts'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())
-    .pipe(gulp.dest('public'));
+    .pipe(gulp.dest('public/minified'));
 });
 
 // Default task

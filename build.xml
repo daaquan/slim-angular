@@ -27,6 +27,9 @@
         <phingcall target="build.dir">
             <property name="dest.dir" value="public" />
         </phingcall>
+        <php function="uniqid" returnProperty="id" />
+        <exec command="find ${package.dir}/php/templates -type f -exec sed -i &quot;s/minified/${id}/g&quot; {} +" />
+        <exec command="mv ${package.dir}/public/minified/ ${package.dir}/public/${id}/" passthru="true" />
     </target>
 
     <target name="copy.composer">
