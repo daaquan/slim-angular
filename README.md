@@ -155,3 +155,5 @@ composer build
  - CodeSchool's excellent [course](https://www.codeschool.com/courses/shaping-up-with-angular-js) on AngularJS
 
 ## Have fun with Nuragio
+
+Feel free to [open an issue](https://github.com/alexdebril/nuragio/issues) if you have any question or suggestion about Nuragio
