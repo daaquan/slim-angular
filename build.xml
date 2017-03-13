@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Nuragio" default="build" basedir=".">
+<project name="slim-angular" default="build" basedir=".">
 
     <property name="package.dir" value="dist/package" />
     <property name="dest.dir" value="" />

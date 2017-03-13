@@ -1,11 +1,11 @@
-# Nuragio
+# slim-angular
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/482685e6-d5b5-4801-809e-4591743a1b96/small.png)](https://insight.sensiolabs.com/projects/482685e6-d5b5-4801-809e-4591743a1b96)
-[![Build Status](https://travis-ci.org/alexdebril/nuragio.svg?branch=master)](https://travis-ci.org/alexdebril/nuragio)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alexdebril/nuragio/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/nuragio/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/alexdebril/nuragio/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/nuragio/?branch=master)
+[![Build Status](https://travis-ci.org/alexdebril/slim-angular.svg?branch=master)](https://travis-ci.org/alexdebril/slim-angular)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alexdebril/slim-angular/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/slim-angular/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/alexdebril/slim-angular/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/slim-angular/?branch=master)
 
-Nuragio is a complete skeleton app based on Slim Framework and AngularJS. It is designed to start a new project with a clean and efficient code base using : 
+slim-angular is a complete skeleton app based on Slim Framework and AngularJS. It is designed to start a new project with a clean and efficient code base using : 
 
 - [Slim Framework](http://www.slimframework.com) for the server-side scripting
 - [AngularJS](https://angularjs.org) for the frontend's interactions
@@ -18,7 +18,7 @@ Nuragio is a complete skeleton app based on Slim Framework and AngularJS. It is 
 
 ## Dependencies
 
-Your development environment must have the following to install Nuragio : 
+Your development environment must have the following to install slim-angular : 
 
 - PHP 5.6+ or 7
 - Composer
@@ -31,7 +31,7 @@ All these packages have repositories or easy-to-use installers, so please refer 
 Once you have installed properly the dependencies above on your machine, just use composer to create a new project
 
 ```bash
-composer create-project debril/nuragio [my-app-name]
+composer create-project debril/slim-angular [my-app-name]
 ```
 
 Replace `[my-app-name]` with the desired directory name for your new application. If Composer asks you about removing VCS directories, answer 'Yes' as you'll want to work in your own repository. Once the PHP packages installation is over, Composer will install npm packages and then your project is ready.
@@ -50,14 +50,14 @@ Then point your browser to http://0.0.0.0:8080
 
 ## Architecture
 
-Nuragio is designed to create efficient websites based on PHP, AngularJS and Bootstrap. The goal of Nuragio is to share responsibilities between the server-side and the frontend :
+slim-angular is designed to create efficient websites based on PHP, AngularJS and Bootstrap. The goal of slim-angular is to share responsibilities between the server-side and the frontend :
 
 - the server-side is responsible for the business logic, the security and the application's initialization.
 - the frontend is responsible for the user interface and the layout.
 
 Which means that at the first hit the server will initialize a session, generate a lightweight HTML page and send it to the browser. Then, AngularJS will handle the user's interactions and communicate with the server when needed.
 
-Out of the box, Nuragio is perfect for single page applications as it handles routes using `angular-route`. You may prefer to have routing on the server-side and if so, just use [Slim's routing](http://www.slimframework.com/docs/objects/router.html) instead.
+Out of the box, slim-angular is perfect for single page applications as it handles routes using `angular-route`. You may prefer to have routing on the server-side and if so, just use [Slim's routing](http://www.slimframework.com/docs/objects/router.html) instead.
 
 ### Server-Side
 
@@ -81,9 +81,9 @@ Contains styles written according to the [Less](http://lesscss.org) pre-processo
 
 Contains the frontend application built with AngularJS. The files contained in `js/` are also minified, this time in the `public/minified/app.min.js` file.
 
-## Working with Nuragio
+## Working with slim-angular
 
-Working in a project created wit Nuragio is easy. All the server-side logic is in the `php/` folder, styles are in `css/` and javascripts in `js/`. There's two subtilities : 
+Working in a project created wit slim-angular is easy. All the server-side logic is in the `php/` folder, styles are in `css/` and javascripts in `js/`. There's two subtilities : 
 
  - you need to run Gulp to build styles and javascripts into the `public/minified` folder.
  - HTTP requests must be secured using the tokenizer
@@ -106,7 +106,7 @@ Now, Gulp will watch `css/` and `js/` in order to compile and/or minify static r
 
 ### Tokenizer
 
-The server-side relies on [slim/csrf](https://github.com/slimphp/Slim-Csrf) to protect your application against CSRF. So everytime you call the server, you'll need to "tokenize" your request by adding the security token in your arguments. And there's an [Angular service](https://github.com/alexdebril/nuragio/blob/master/js/app.js#L3) for that, which you can inject and use like this : 
+The server-side relies on [slim/csrf](https://github.com/slimphp/Slim-Csrf) to protect your application against CSRF. So everytime you call the server, you'll need to "tokenize" your request by adding the security token in your arguments. And there's an [Angular service](https://github.com/alexdebril/slim-angular/blob/master/js/app.js#L3) for that, which you can inject and use like this : 
 
 ```js
 // we add the tokenizer service in our controller's dependencies
@@ -135,7 +135,7 @@ function HelloController($http, tokenizer) {
 
 ## Build and deployment
 
-Nuragio includes a [Phing XML script](https://github.com/alexdebril/nuragio/blob/master/build.xml) to build your application in an easy-to-deploy archive. The main steps are : 
+slim-angular includes a [Phing XML script](https://github.com/alexdebril/slim-angular/blob/master/build.xml) to build your application in an easy-to-deploy archive. The main steps are : 
 
  - copy `php/`and `public/` in a packaging folder called `dist/package/`
  - in the packaging folder : install dependencies with Composer in production mode (no development dependencies and with an optimized autoloader)
@@ -154,6 +154,6 @@ composer build
  - Angular's [Tutorial](https://docs.angularjs.org/tutorial)
  - CodeSchool's excellent [course](https://www.codeschool.com/courses/shaping-up-with-angular-js) on AngularJS
 
-## Have fun with Nuragio
+## Have fun with slim-angular
 
-Feel free to [open an issue](https://github.com/alexdebril/nuragio/issues) if you have any question or suggestion about Nuragio
+Feel free to [open an issue](https://github.com/alexdebril/slim-angular/issues) if you have any question or suggestion about slim-angular

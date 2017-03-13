@@ -12,7 +12,7 @@ class HomepageTest extends BaseTestCase
         $response = $this->runApp('GET', '/');
 
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertContains('Nuragio', (string)$response->getBody());
+        $this->assertContains('slim-angular', (string)$response->getBody());
     }
 
     public function testInvert()

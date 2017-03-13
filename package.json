@@ -1,5 +1,5 @@
 {
-  "name": "Nuragio",
+  "name": "slim-angular",
   "version": "1.0.0",
   "description": "A raw web stack based on Angular and Slim Framework",
   "main": "public/index.php",
