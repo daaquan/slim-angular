@@ -1,6 +1,6 @@
 # slim-angular
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/482685e6-d5b5-4801-809e-4591743a1b96/small.png)](https://insight.sensiolabs.com/projects/482685e6-d5b5-4801-809e-4591743a1b96)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/789220ea-d8c8-48fc-9555-9ca1bd07de45/mini.png)](https://insight.sensiolabs.com/projects/789220ea-d8c8-48fc-9555-9ca1bd07de45)
 [![Build Status](https://travis-ci.org/alexdebril/slim-angular.svg?branch=master)](https://travis-ci.org/alexdebril/slim-angular)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alexdebril/slim-angular/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/slim-angular/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/alexdebril/slim-angular/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/slim-angular/?branch=master)
