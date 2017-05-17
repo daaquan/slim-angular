@@ -2,11 +2,13 @@ version: '2'
 services:
 
   php:
+    container_name: sa-php
     image: php:7-fpm
     volumes:
         - .:/var/www/site
 
   nginx:
+    container_name: sa-nginx
     image: nginx:stable
     volumes:
         - .:/var/www/site
@@ -14,11 +16,11 @@ services:
     links:
         - php
     ports:
-       - "8080:80"
+        - "8080:80"
 
   tools:
+    restart: on-failure
+    container_name: sa-tools
     build: docker/tools
-    links:
-        - php    
-    volumes_from:
-        -  php
+    volumes:
+        - .:/var/www/site

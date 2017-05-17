@@ -15,6 +15,4 @@ RUN chmod +x /usr/bin/composer
 
 WORKDIR /var/www/site
 
-RUN ls -lhtr /var/www/site
-
-CMD ["./node_modules/gulp/bin/gulp.js", "watch"]
+CMD ["sh", "docker/init-vm.sh"]
