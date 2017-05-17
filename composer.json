@@ -1,7 +1,7 @@
 {
     "name": "debril/slim-angular",
     "description": "A raw web stack based on Angular, Bootstrap and Slim Framework",
-    "keywords": ["slim", "stack", "rest", "router", "psr7", "angular", "gulp", "less", "bootstrap"],
+    "keywords": ["slim", "stack","docker", "rest", "router", "psr7", "angular", "gulp", "less", "bootstrap"],
     "homepage": "https://github.com/alexdebril/slim-angular",
     "license": "MIT",
     "authors": [
