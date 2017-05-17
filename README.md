@@ -26,13 +26,29 @@ Your development environment must have the following to install slim-angular :
 
 or Docker (see below). All these packages have repositories or easy-to-use installers, so please refer to their documentations to know how to get it.
 
-### The alternative (and recommanded) way : Docker
+### The alternative (and recommended) way : Docker
 
-If you have Docker installed, just run
+If you have Docker with docker-compose installed, just run
 
 ```shell
 
 docker-compose up --build
+```
+
+And you're set. Docker will take charge of running Nginx, PHP and Gulp. No need to worry about launching `gulp watch`.
+
+#### Running composer through Docker
+
+There's a script for this :
+
+```shell
+./bin/composer
+```
+
+It will work as a locally installed composer executable. For instance, you want to require monolog :
+
+```shell
+./bin/composer require monolog/monolog
 ```
 
 ## Installation
