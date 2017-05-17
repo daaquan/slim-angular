@@ -8,13 +8,13 @@ var gulp = require('gulp'),
     notify = require('gulp-notify');
 
 
-gulp.task('less', function() {
+gulp.task('less', function(cb) {
     return gulp.src('css/*.less')
         .pipe(less())
         .pipe(gulp.dest('dist/styles'));
 });
 // Styles
-gulp.task('styles', function() {
+gulp.task('styles', ['less'], function(cb) {
   return gulp.src(
       [
           'node_modules/bootstrap/dist/css/bootstrap.css',
@@ -46,29 +46,13 @@ gulp.task('scripts', function() {
 });
 
 // Default task
-gulp.task('default', ['build']);
-
-// build
-gulp.task('build', function() {
-    gulp.run('less', 'styles', 'scripts');
-});
+gulp.task('default', ['less', 'styles', 'scripts']);
 
 // Watch
-gulp.task('watch', ['build'], function() {
+gulp.task('watch', ['default'], function() {
     // Watch .css files
-    gulp.watch('css/*.less', function(event) {
-      console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-      gulp.run('less');
-    });
-
-    gulp.watch('dist/styles/*.css', function(event) {
-        gulp.run('styles');
-    });
+    gulp.watch('css/*.less', ['styles']);
 
     // Watch .js files
-    gulp.watch('js/*.js', function(event) {
-      console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-      gulp.run('scripts');
-    });
-
+    gulp.watch('js/*.js', ['scripts']);
   });
