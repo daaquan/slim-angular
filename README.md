@@ -5,7 +5,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alexdebril/slim-angular/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/slim-angular/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/alexdebril/slim-angular/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/alexdebril/slim-angular/?branch=master)
 
-slim-angular is a complete skeleton app based on Slim Framework and AngularJS. It is designed to start a new project with a clean and efficient code base using : 
+slim-angular is a complete skeleton app based on Slim Framework and AngularJS. It is designed to start a new project with a clean and efficient code base using :
 
 - [Slim Framework](http://www.slimframework.com) for the server-side scripting
 - [AngularJS](https://angularjs.org) for the frontend's interactions
@@ -18,13 +18,22 @@ slim-angular is a complete skeleton app based on Slim Framework and AngularJS. I
 
 ## Dependencies
 
-Your development environment must have the following to install slim-angular : 
+Your development environment must have the following to install slim-angular :
 
 - PHP 5.6+ or 7
 - Composer
 - npm
 
-All these packages have repositories or easy-to-use installers, so please refer to their documentations to know how to get it.
+or Docker (see below). All these packages have repositories or easy-to-use installers, so please refer to their documentations to know how to get it.
+
+### The alternative (and recommanded) way : Docker
+
+If you have Docker installed, just run
+
+```shell
+
+docker-compose up --build
+```
 
 ## Installation
 
@@ -38,7 +47,7 @@ Replace `[my-app-name]` with the desired directory name for your new application
 
 ## Running
 
-To run the application in development, cd to your project's folder and run composer start : 
+To run the application in development, cd to your project's folder and run composer start :
 
 
 ```bash
@@ -83,20 +92,20 @@ Contains the frontend application built with AngularJS. The files contained in `
 
 ## Working with slim-angular
 
-Working in a project created wit slim-angular is easy. All the server-side logic is in the `php/` folder, styles are in `css/` and javascripts in `js/`. There's two subtilities : 
+Working in a project created wit slim-angular is easy. All the server-side logic is in the `php/` folder, styles are in `css/` and javascripts in `js/`. There's two subtilities :
 
  - you need to run Gulp to build styles and javascripts into the `public/minified` folder.
  - HTTP requests must be secured using the tokenizer
- 
+
 ### Gulp
 
-Gulp is pre-configured in the project, you just need to start it : 
+Gulp is pre-configured in the project, you just need to start it :
 
 ```shell
 composer gulp
 ```
 
-If Gulp is installed system-wide, you may prefer to start it without Composer : 
+If Gulp is installed system-wide, you may prefer to start it without Composer :
 
 ```shell
 gulp watch
@@ -106,7 +115,7 @@ Now, Gulp will watch `css/` and `js/` in order to compile and/or minify static r
 
 ### Tokenizer
 
-The server-side relies on [slim/csrf](https://github.com/slimphp/Slim-Csrf) to protect your application against CSRF. So everytime you call the server, you'll need to "tokenize" your request by adding the security token in your arguments. And there's an [Angular service](https://github.com/alexdebril/slim-angular/blob/master/js/app.js#L3) for that, which you can inject and use like this : 
+The server-side relies on [slim/csrf](https://github.com/slimphp/Slim-Csrf) to protect your application against CSRF. So everytime you call the server, you'll need to "tokenize" your request by adding the security token in your arguments. And there's an [Angular service](https://github.com/alexdebril/slim-angular/blob/master/js/app.js#L3) for that, which you can inject and use like this :
 
 ```js
 // we add the tokenizer service in our controller's dependencies
@@ -135,14 +144,14 @@ function HelloController($http, tokenizer) {
 
 ## Build and deployment
 
-slim-angular includes a [Phing XML script](https://github.com/alexdebril/slim-angular/blob/master/build.xml) to build your application in an easy-to-deploy archive. The main steps are : 
+slim-angular includes a [Phing XML script](https://github.com/alexdebril/slim-angular/blob/master/build.xml) to build your application in an easy-to-deploy archive. The main steps are :
 
  - copy `php/`and `public/` in a packaging folder called `dist/package/`
  - in the packaging folder : install dependencies with Composer in production mode (no development dependencies and with an optimized autoloader)
  - rename `public/minified/` to prevent cache issues
  - create a Zip archive at the root of your application
- 
-The archive contains only the needed files for your application to work in a production environnment. Start the build with the following command : 
+
+The archive contains only the needed files for your application to work in a production environnment. Start the build with the following command :
 
 ```shell
 composer build
