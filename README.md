@@ -34,7 +34,11 @@ Once you have installed properly the dependencies above on your machine, just us
 composer create-project debril/slim-angular [my-app-name]
 ```
 
-Replace `[my-app-name]` with the desired directory name for your new application. If Composer asks you about removing VCS directories, answer 'Yes' as you'll want to work in your own repository. Once the PHP packages installation is over, you'll need to install npm packages. If you want to run your application through Docker, you don't need to do this by yourself as Docker will do it for you. Otherwise, ask npm to install dependencies :
+Replace `[my-app-name]` with the desired directory name for your new application. If Composer asks you about removing VCS directories, answer 'Yes' as you'll want to work in your own repository. Once the PHP packages installation is over, you'll need to install npm packages.
+
+### Skip this if you want to use Docker
+
+If you want to run your application through Docker, you don't need to do this by yourself as Docker will do it for you. Otherwise, ask npm to install dependencies :
 
 ```bash
 cd [my-app-name]
