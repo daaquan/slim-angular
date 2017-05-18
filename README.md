@@ -22,34 +22,9 @@ Your development environment must have the following to install slim-angular :
 
 - PHP 5.6+ or 7
 - Composer
-- npm
+- Docker or npm
 
-or Docker (see below). All these packages have repositories or easy-to-use installers, so please refer to their documentations to know how to get it.
-
-### The alternative (and recommended) way : Docker
-
-If you have Docker with docker-compose installed, just run
-
-```shell
-
-docker-compose up --build
-```
-
-And you're set. Docker will take charge of running Nginx, PHP and Gulp. No need to worry about launching `gulp watch`.
-
-#### Running composer through Docker
-
-There's a script for this :
-
-```shell
-./bin/composer
-```
-
-It will work as a locally installed composer executable. For instance, you want to require monolog :
-
-```shell
-./bin/composer require monolog/monolog
-```
+All these packages have repositories or easy-to-use installers, so please refer to their documentations to know how to get it. If you have Docker installed, you don't have to install nodejs and npm.
 
 ## Installation
 
@@ -59,19 +34,37 @@ Once you have installed properly the dependencies above on your machine, just us
 composer create-project debril/slim-angular [my-app-name]
 ```
 
-Replace `[my-app-name]` with the desired directory name for your new application. If Composer asks you about removing VCS directories, answer 'Yes' as you'll want to work in your own repository. Once the PHP packages installation is over, Composer will install npm packages and then your project is ready.
-
-## Running
-
-To run the application in development, cd to your project's folder and run composer start :
-
+Replace `[my-app-name]` with the desired directory name for your new application. If Composer asks you about removing VCS directories, answer 'Yes' as you'll want to work in your own repository. Once the PHP packages installation is over, you'll need to install npm packages. If you want to run your application through Docker, you don't need to do this by yourself as Docker will do it for you. Otherwise, ask npm to install dependencies :
 
 ```bash
 cd [my-app-name]
+npm install
+```
+
+## Running
+
+The application will be available at : http://0.0.0.0:8080
+
+### With Docker
+
+```shell
+
+docker-compose up --build
+```
+
+And you're set. Docker will take charge of running Nginx, PHP and Gulp. No need to worry about launching `gulp watch`.
+
+### With Composer and Gulp
+
+```bash
 composer start
 ```
 
-Then point your browser to http://0.0.0.0:8080
+And in another terminal :
+
+```bash
+composer gulp
+```
 
 ## Architecture
 
