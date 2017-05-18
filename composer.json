@@ -37,11 +37,7 @@
         "build": "./vendor/bin/phing",
         "gulp": "./node_modules/gulp/bin/gulp.js watch",
         "test": "phpunit",
-        "newman": "./node_modules/newman/bin/newman.js run rest-api.postman_collection.json",
-        "post-create-project-cmd": [
-            "npm install",
-            "./node_modules/gulp/bin/gulp.js"
-        ]
+        "newman": "./node_modules/newman/bin/newman.js run rest-api.postman_collection.json"
 	}
 
 }
