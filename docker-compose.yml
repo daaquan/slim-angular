@@ -18,9 +18,9 @@ services:
     ports:
         - "8080:80"
 
-  tools:
+  gulp:
     restart: on-failure
-    container_name: sa-tools
-    build: docker/tools
+    container_name: sa-gulp
+    build: docker/gulp
     volumes:
         - .:/var/www/site
