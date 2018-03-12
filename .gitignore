@@ -1,3 +1,4 @@
+nbproject/
 /public/*.min.*
 /node_modules/
 /vendor/
@@ -6,3 +7,4 @@
 dist/
 public/minified
 *.tar.gz
+/nbproject/private/
